@@ -5,7 +5,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <TempCard />
+      <TempCard temp="5" />
+      <TempCard temp="20" />
     </div>
   );
 }

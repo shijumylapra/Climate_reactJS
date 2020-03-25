@@ -1,1 +1,5 @@
- 
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Yanone+Kaffeesatz&display=swap");
+
+.App {
+  margin: 0 auto;
+}
