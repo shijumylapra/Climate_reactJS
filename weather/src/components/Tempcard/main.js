@@ -5,16 +5,31 @@ import Situation from "./situation";
 import Logo from "./icon";
 
 const TempCard = props => {
-  let temphigh = (1 - (props.temp - 12) / 28) * 255;
-  let templow = temphigh - 150;
+  let temphigh = 0;
+  let templow = 0;
+  let bgdiv = null;
 
-  const TCard = styled.div`
-    margin: 0 auto;
-    background: linear-gradient(
+  if (props.temp > 12) {
+    temphigh = (1 - (props.temp - 12) / 28) * 255;
+    templow = temphigh - 150;
+    bgdiv = `linear-gradient(
       to top,
       rgb(255, ${temphigh}, 0),
       rgb(255, ${templow}, 0)
-    );
+    );`;
+  } else if (props.temp < 12) {
+    temphigh = (1 - (props.temp + 20) / 32) * 255;
+    templow = temphigh - 150;
+    bgdiv = `linear-gradient(
+      to top,
+      rgb(0, ${temphigh}, 255),
+      rgb(0, ${templow}, 255)
+    );`;
+  }
+
+  const TCard = styled.div`
+    margin: 0 auto;
+    background: ${bgdiv};
     width: 200px;
     height: 240px;
     display: flex;
