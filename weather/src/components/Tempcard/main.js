@@ -4,21 +4,21 @@ import Location from "./location";
 import Situation from "./situation";
 import Logo from "./icon";
 
-const TempCard = props => {
+const TempCard = ({ _temp, _situation, __city, __country }) => {
   let temphigh = 0;
   let templow = 0;
   let bgdiv = null;
 
-  if (props.temp > 12) {
-    temphigh = (1 - (props.temp - 12) / 28) * 255;
+  if (_temp > 12) {
+    temphigh = (1 - (_temp - 12) / 28) * 255;
     templow = temphigh - 150;
     bgdiv = `linear-gradient(
       to top,
       rgb(255, ${temphigh}, 0),
       rgb(255, ${templow}, 0)
     );`;
-  } else if (props.temp < 12) {
-    temphigh = (1 - (props.temp + 20) / 32) * 255;
+  } else if (_temp < 12) {
+    temphigh = (1 - (_temp + 20) / 32) * 255;
     templow = temphigh - 150;
     bgdiv = `linear-gradient(
       to top,
@@ -34,9 +34,11 @@ const TempCard = props => {
     height: 240px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
-    border-radius: 15px;
+    color: white;
+    text-shadow: 0 0 0.5rem black;
+    border: 0.2rem solid black;
+    border-radius: 0.5rem;
   `;
   return (
     //emmet
@@ -44,9 +46,9 @@ const TempCard = props => {
     // emmet >>> h1+h3+img+h1+h3
 
     <TCard>
-      <Location />
-      <Logo />
-      <Situation />
+      <Location __Place={__city} __Country={__country} />
+      <Logo situations={_situation} />
+      <Situation __temp={_temp} __stage={_situation} />
     </TCard>
   );
 };
