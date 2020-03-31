@@ -31,7 +31,7 @@ const TempCard = ({ _temp, _situation, _city, _country }) => {
     margin: 0 auto;
     background: ${bgdiv};
     width: 200px;
-    height: 240px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;

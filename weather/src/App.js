@@ -36,17 +36,6 @@ function App() {
     });
   };
 
-  useEffect(() => {
-    data(_Query).then(res => {
-      setWeather({
-        _Temp: res.main.temp,
-        _City: res.name,
-        _Country: res.sys.country,
-        _Situation: res.weather[0].main
-      });
-    });
-  }, []);
-
   return (
     <div className="App">
       <TempCard
