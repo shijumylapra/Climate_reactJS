@@ -4,7 +4,7 @@ import Location from "./location";
 import Situation from "./situation";
 import Logo from "./icon";
 
-const TempCard = ({ _temp, _situation, __city, __country }) => {
+const TempCard = ({ _temp, _situation, _city, _country }) => {
   let temphigh = 0;
   let templow = 0;
   let bgdiv = null;
@@ -35,7 +35,7 @@ const TempCard = ({ _temp, _situation, __city, __country }) => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: darkblue;
     text-shadow: 0 0 0.5rem black;
     border: 0.2rem solid black;
     border-radius: 0.5rem;
@@ -46,8 +46,8 @@ const TempCard = ({ _temp, _situation, __city, __country }) => {
     // emmet >>> h1+h3+img+h1+h3
 
     <TCard>
-      <Location __Place={__city} __Country={__country} />
-      <Logo situations={_situation} />
+      <Location __Place={_city} __Country={_country} />
+      <Logo __Situation={_situation} />
       <Situation __temp={_temp} __stage={_situation} />
     </TCard>
   );
