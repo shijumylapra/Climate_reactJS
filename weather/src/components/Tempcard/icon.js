@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-const CImage = ({ _situations }) => {
+const CImage = ({ __Situation }) => {
   const Logo = styled.img`
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     margin: 15px;
   `;
 
   let icon = "";
 
-  switch (_situations) {
+  switch (__Situation) {
     case "Clouds":
       icon = `./img/Mostly Cloudy-2x.png`;
       break;
@@ -47,8 +47,9 @@ const CImage = ({ _situations }) => {
     case "Thunderstorm":
       icon = `./img/Severe Thunderstorm-2x.png`;
       break;
+
     default:
-      icon = `./img/Fog-2x.png`;
+      icon = `./img/Mostly Sunny-2x.png`;
       break;
   }
 
